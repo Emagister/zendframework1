@@ -2,7 +2,7 @@
     "name": "emagister/zendframework1",
     "description": "A Zend Framework 1.12.x mirror for Emagister",
     "minimum-stability": "dev",
-    "version": "1.12.0",
+    "version": "1.12.1",
     "type": "library",
     "keywords": ["emagister","zend","zend framework"],
     "license": "New BSD",
