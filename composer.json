@@ -1,0 +1,25 @@
+{
+    "name": "Emagister/zendframework1",
+    "description": "A Zend Framework 1.12.x mirror for Emagister",
+    "minimum-stability": "dev",
+    "version": "1.12.0",
+    "type": "library",
+    "keywords": ["emagister","zend","zend framework"],
+    "license": "New BSD",
+    "authors": [
+        {
+            "name": "Emagister Tech",
+            "email": "php@emagister.com"
+        }
+    ],
+    "support": {
+        "email": "php@emagister.com"
+    },
+    "autoload": {
+        "psr-0": {
+            "Zend": "src/",
+            "ZendX": "src/"
+        }
+    },
+    "bin": ["bin/classmap_generator.php", "bin/zf.bat", "bin/zf.php", "bin/zf.sh"]
+}
