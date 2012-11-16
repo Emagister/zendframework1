@@ -377,7 +377,7 @@ class Zend_Loader_PluginLoader implements Zend_Loader_PluginLoader_Interface
         foreach ($registry as $prefix => $paths) {
             $className = $prefix . $name;
 
-            if (class_exists($className, false)) {
+            if (class_exists($className)) {
                 $found = true;
                 break;
             }
@@ -388,7 +388,7 @@ class Zend_Loader_PluginLoader implements Zend_Loader_PluginLoader_Interface
                 $loadFile = $path . $classFile;
                 if (Zend_Loader::isReadable($loadFile)) {
                     include_once $loadFile;
-                    if (class_exists($className, false)) {
+                    if (class_exists($className)) {
                         if (null !== $incFile) {
                             self::_appendIncFile($loadFile);
                         }
