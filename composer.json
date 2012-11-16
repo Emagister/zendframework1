@@ -24,5 +24,8 @@
             "ZendX": "src/"
         }
     },
+    "include-path": [
+        "src/"
+    ],
     "bin": ["bin/classmap_generator.php", "bin/zf.bat", "bin/zf.php", "bin/zf.sh"]
 }
