@@ -51,7 +51,7 @@ class Zend_Loader
      */
     public static function loadClass($class, $dirs = null)
     {
-        if (class_exists($class, true) || interface_exists($class, true)) {
+        if (class_exists($class, false) || interface_exists($class, false)) {
             return;
         }
 
