@@ -390,14 +390,16 @@ class Zend_Gdata_Analytics_DataQuery extends Zend_Gdata_Query
         // filtering
         $filters = "";
         foreach ($this->_filters as $filter) {
-            $filters.=($filter[1]===true?';':',').$filter[0];
+            $filters .= (true === $filter[1] ? ';' : ',') . $filter[0];
         }
         
-        if ($filters!="") {
-            $this->setParam('filters', ltrim($filters, ",;"));
+        $queryString = $this->getQueryString();
+        $uri .= $queryString;
+        
+        if (strlen($filters) > 0) {
+            $uri .= (strlen($queryString) > 0 ? '&' : '?') . sprintf('filters=%s', ltrim($filters, ",;"));
         }
         
-        $uri .= $this->getQueryString();
         return $uri;
     }
 }
