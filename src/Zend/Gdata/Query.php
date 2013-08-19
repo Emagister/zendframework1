@@ -87,7 +87,7 @@ class Zend_Gdata_Query
             if (substr($name, 0, 1) == '_') {
                 continue;
             }
-            $queryArray[] = urlencode($name) . '=' . urlencode($value);
+            $queryArray[] = $name . '=' . urlencode($value);
         }
         if (count($queryArray) > 0) {
             return '?' . implode('&', $queryArray);
