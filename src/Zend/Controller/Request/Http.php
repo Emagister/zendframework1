@@ -732,7 +732,7 @@ class Zend_Controller_Request_Http extends Zend_Controller_Request_Abstract
             return $_POST[$keyName];
         }
 
-        return $default;
+        return $this->nullifyEmptyString($default);
     }
 
     /**
@@ -760,7 +760,27 @@ class Zend_Controller_Request_Http extends Zend_Controller_Request_Abstract
         ) {
             $return += $_POST;
         }
-        return $return;
+        return $this->nullifyEmptyStrings($return);
+    }
+
+    /**
+     * @param array $params
+     * @return array
+     */
+    private function nullifyEmptyStrings(array $params)
+    {
+        return array_map(function($element) {
+            return $this->nullifyEmptyString($element);
+        }, $params);
+    }
+
+    /**
+     * @param string $value
+     * @return string|null
+     */
+    private function nullifyEmptyString($value)
+    {
+        return ($value === '') ? null : $value;
     }
 
     /**
